@@ -21,7 +21,8 @@ public class EchoServer {
 
             byte[] statement = new byte[200];
             socket.getInputStream().read(statement);
-
+            System.out.println("Received from client: " + new String(statement).trim());
+            System.out.println("Sending to client: " + new String(statement).trim());
             socket.getOutputStream().write(statement);
         }
     }
