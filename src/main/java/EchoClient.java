@@ -17,8 +17,8 @@ public class EchoClient {
 			throw new NumberFormatException("invalid port number");
 		}
 
-		if (port < 81) {
-			throw new Exception("Port must be greater than 80 and less than " + Short.MAX_VALUE);
+		if (port < 1025) {
+			throw new Exception("Port must be greater than 1024 and less than " + Short.MAX_VALUE);
 		}
 	}
 	
