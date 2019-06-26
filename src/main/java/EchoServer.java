@@ -16,8 +16,9 @@ public class EchoServer {
             throw new Exception("Port must be greater than 1024 and less than " + Short.MAX_VALUE);
         }
         ServerSocket serverSocket = new ServerSocket(port);
+        Socket socket = null;
+        socket = serverSocket.accept();
         while (true) {//should make the server keep running
-            Socket socket = serverSocket.accept();
 
             byte[] statement = new byte[200];
             socket.getInputStream().read(statement);
